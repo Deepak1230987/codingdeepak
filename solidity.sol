@@ -1,7 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
-import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+/* I am removing this import by commenting it out to disable chain-link integration.
+
+ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+
+*/
+
 import "./PriceConverter.sol";
 
 error NotOwner();
@@ -37,11 +42,16 @@ contract FundMe {
        
     }
     
+    
+    /* I am removing this function to disable the chain link integration by just commenting it out.
+
     function getVersion() public view returns (uint256){
         // ETH/USD price feed address of Sepolia Network.
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
         return priceFeed.version();
     }
+    */
+
     
     modifier onlyOwner {
         // require(msg.sender == owner);
