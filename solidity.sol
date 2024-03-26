@@ -32,7 +32,7 @@ contract FundMe {
         require(msg.value.getConversionRate() >= MINIMUM_USD, "You need to spend more ETH!");
         // require(PriceConverter.getConversionRate(msg.value) >= MINIMUM_USD, "You need to spend more ETH!");
 
-        if (!isFunder[msg.sender]) {
+        if (!checkFunder[msg.sender]) {
             
             // if the unique funder is found the add them to the funders array
             funders.push(msg.sender);
