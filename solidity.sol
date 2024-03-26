@@ -36,7 +36,7 @@ contract FundMe {
             
             // if the unique funder is found the add them to the funders array
             funders.push(msg.sender);
-            isFunder[msg.sender] = true;
+            checkFunder[msg.sender] = true;
         }
         addressToAmountFunded[msg.sender] += msg.value;
        
